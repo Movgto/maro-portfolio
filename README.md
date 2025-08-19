@@ -14,7 +14,7 @@ The features I would hightlight are the following:
 There is also a backend application running on a **GCloud App Engine** service. This backend is made with **Python** and handles the communication with the frontend via **websockets**, receiving the messages from the chat and passing them to an **AI Agent**.<br><br>I'm using a **semantic kernel agent** to process the messages and at the same time this agent utilizes a **Gemini LLM** to generate text responses, then it sends them back to this frontend which listens continuosly for the response event.<br><br>
 The **AI Agent** is also able to store users data (name, contact info, and project details) integrating a custom plugin that enables it to perform this task whenever it finds it reasonable based on the users messages.
 
-You can check the backend repository [here]().
+You can check the backend repository [here](https://github.com/Movgto/my-portfolio-be).
 
 ## Thank you
 
