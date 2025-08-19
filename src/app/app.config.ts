@@ -3,9 +3,10 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 import {provideSocketIo, SocketIoConfig} from 'ngx-socket-io'
 
 import { routes } from './app.routes';
+import { environment } from '../environments/environment.development';
 
 const socketIoConfig: SocketIoConfig = {
-  url: 'http://localhost:5000',
+  url: environment.apiUrl,
   // options: {
   //   path: '/ws/socket.io',
   // }  
