@@ -3,7 +3,7 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 import {provideSocketIo, SocketIoConfig} from 'ngx-socket-io'
 
 import { routes } from './app.routes';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment';
 
 const socketIoConfig: SocketIoConfig = {
   url: environment.apiUrl,
