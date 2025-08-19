@@ -1,0 +1,37 @@
+<div class="flex w-full max-w-xl mx-auto mt-10">
+    <mat-card class="w-full">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>
+                    <h2 class="text-xl font-semibold text-slate-800">Contact me</h2>
+                </mat-card-title>
+            </mat-card-title-group>
+        </mat-card-header>
+
+        <mat-card-content>
+            <h1 class="text-center w-fit mx-auto mt-10 text-2xl font-medium text-slate-800">Get in Touch</h1>
+
+            <p class="text-center w-fit mx-auto mt-4 text-lg max-w-xl text-slate-800">
+                If you have any questions or inquiries, feel free to reach out to me with the following options:
+            </p>
+
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemIcon class="material-icons">email</span>
+                    <span matListItemTitle>My email</span>
+                    <span matLine>maromvz@gmail.com</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <img matListItemIcon src="logos/whatsapp-logo.png" alt="whatsapp logo">
+                    <span matListItemTitle>Whatsapp</span>
+                    <span matLine>+52 782 819 9704</span>
+                </mat-list-item>
+            </mat-list>
+
+            <div class="flex flex-col mx-auto text-center w-fit items-center mt-4">
+                <p class="text-slate-800 text-lg">or also, you could talk with <strong>MaroBot</strong>, our <strong>AI virtual assistant</strong>, by clicking the button below:</p>
+                <button (click)="openChat()" mat-raised-button color="primary" class="mt-4">Talk to MaroBot</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

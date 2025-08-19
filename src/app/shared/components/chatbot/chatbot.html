@@ -1,0 +1,49 @@
+@if (chatOpen()) {
+<div class="flex flex-col justify-start fixed right-2 bottom-0 z-50 w-full max-w-96 bg-blue-600 rounded-t-xl px-1">
+    <div class="p-2 flex justify-between items-center w-full">
+        <div class="flex gap-2 items-center text-white">
+            <span class="material-icons">smart_toy</span>
+            <p class="font-bold">MaroBot</p>
+        </div>
+        <button (click)="toggleChat()" class="text-white hover:cursor-pointer">
+            <span class="material-icons">close</span>
+        </button>
+    </div>
+    <div class="bg-white w-full flex-1 rounded-t-xl">
+        <div class="flex flex-col gap-1 p-4 h-72 overflow-y-auto" #chatBox>
+            <div class="py-1 w-full max-w-5/6 flex gap-2 self-start flex-row items-center text-slate-700">
+                <span class="material-icons">smart_toy</span>
+                <p>Hello! How can I assist you today?</p>
+            </div>
+            @for(message of chat(); track $index; let last = $last) {
+                <app-chat-message [isLast]="last" [message]="message"></app-chat-message>
+            }
+            @if(waitingResponse()) {
+            <div class="py-1 w-full max-w-5/6 flex gap-2 self-start flex-row items-center text-slate-700">
+                <span class="material-icons">smart_toy</span>
+                <p>Thinking...</p>
+            </div>
+            }
+        </div>
+    </div>
+    <div class="flex items-center p-1">
+        <div class="flex-1 h-full">
+            <input [formControl]="userMessage" type="text" placeholder="Write a message..."
+                class="size-full outline-none text-white" (keydown)="keyDownHandler($event)" #messageInput>
+        </div>
+        <button mat-icon-button [disabled]="userMessage.invalid || waitingResponse()" class="group"
+            (click)="sendMessage()">
+            <span class="material-icons text-white group-disabled:text-slate-400">send</span>
+        </button>
+    </div>
+</div>
+} @else {
+<div class="fixed right-2 bottom-0">
+    <button class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-t-xl
+            hover:bg-blue-700 transition hover:cursor-pointer" (click)="toggleChat()">
+
+        <span class="material-icons">smart_toy</span>
+        <p>Chat with <span class="font-semibold">MaroBot</span></p>
+    </button>
+</div>
+}

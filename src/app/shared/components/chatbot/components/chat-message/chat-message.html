@@ -1,0 +1,5 @@
+<div class="py-2 px-4 w-fit max-w-5/6 flex gap-2 items-center"
+    [ngClass]="message().role === 'user' ? 'self-end flex-row-reverse bg-blue-800 rounded-2xl text-white' : 'self-start flex-row text-slate-700'">
+    <span class="material-icons">{{ message().role === 'user' ? 'person' : 'smart_toy' }}</span>
+    <p>{{ message().content }}</p>
+</div>

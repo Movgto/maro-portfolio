@@ -1,0 +1,34 @@
+<header class="fixed w-full p-2 flex justify-center bg-white shadow-sm z-50">
+    <nav>
+        <ul class="flex items-center space-x-4">
+            <li class="group hover:cursor-pointer">
+                <button
+                    class="flex gap-2 items-center text-slate-700 text-md font-medium px-4 py-2
+                            rounded-full group-hover:bg-slate-200 group-hover:cursor-pointer"
+                    [ngClass]="currentUrl() === '/' ? 'bg-slate-300':''"
+                >
+                    <ng-icon [name]="currentUrl() === '/' ? 'heroHomeSolid' : 'heroHome'" />
+                    <a routerLink="/">Home</a>
+                </button>
+            </li>
+            <li class="group hover:cursor-pointer">
+                <button
+                    class="flex gap-2 items-center text-slate-700 text-md font-medium px-4 py-2
+                            rounded-full group-hover:bg-slate-200 group-hover:cursor-pointer"
+                    [ngClass]="currentUrl() === '/about' ? 'bg-slate-300':''"
+                >
+                    <a routerLink="about">About</a>
+                </button>
+            </li>
+            <li class="group hover:cursor-pointer">
+                <button
+                    class="flex gap-2 items-center text-slate-700 text-md font-medium px-4 py-2
+                            rounded-full group-hover:bg-slate-200 group-hover:cursor-pointer"
+                    [ngClass]="currentUrl() === '/contact' ? 'bg-slate-300':''"
+                >
+                    <a routerLink="contact">Contact</a>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
